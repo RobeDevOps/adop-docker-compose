@@ -356,3 +356,12 @@ registry:
     REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
     REGISTRY_HTTP_TLS_CERTIFICATE: /certs/registry/fullchain.pem
     REGISTRY_HTTP_TLS_KEY: /certs/registry/privkey.pem
+
+
+filebeat:
+  container_name: filebeat
+  restart: always
+  image: robe/adop-filebeat:6.4.3
+  net: ${CUSTOM_NETWORK_NAME}
+  volumes_from:
+    - proxy:ro
