@@ -25,6 +25,7 @@ logstash:
     - "12201:12201/udp"
     - "25826:25826/udp"
     - "5000:5000/tcp"
+    - "5044:5044/tcp"
 
 kibana:
   container_name: kibana
