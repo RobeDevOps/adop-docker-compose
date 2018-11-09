@@ -1,7 +1,8 @@
 proxy:
   volumes:
     - nginx_config:/etc/nginx
-    - nginx_releasenote:/usr/share/nginx/html
+    - nginx_releasenote:/usr/share/nginx/
+    - nginx_logs:/var/log/nginx
 
 ldap:
   volumes:

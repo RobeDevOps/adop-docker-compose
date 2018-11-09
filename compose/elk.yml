@@ -3,9 +3,13 @@
 elasticsearch:
   container_name: elasticsearch
   restart: always
-  image: elasticsearch:2.1.1
+  image: docker.elastic.co/elasticsearch/elasticsearch:6.4.3
   net: ${CUSTOM_NETWORK_NAME}
   command: elasticsearch -Des.network.host=0.0.0.0
+  environment:
+    - cluster.name=docker-cluster
+    - bootstrap.memory_lock=true
+    - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
   ports:
     - "9200:9200"
   volumes:
@@ -14,7 +18,7 @@ elasticsearch:
 logstash:
   container_name: logstash
   restart: always
-  image: accenture/adop-logstash:0.1.0
+  image: robe/adop-logstash:6.4.3
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     - "constraint:tier==public"
@@ -27,7 +31,7 @@ logstash:
 kibana:
   container_name: kibana
   restart: always
-  image: kibana:4.3.1
+  image: docker.elastic.co/kibana/kibana:6.4.3
   net: ${CUSTOM_NETWORK_NAME}
   command: kibana
   environment:
