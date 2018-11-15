@@ -68,3 +68,7 @@ registry:
   volumes:
     - registry_certs:/certs
     - registry_data:/data
+
+filebeat-docker:
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock

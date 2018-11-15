@@ -362,11 +362,19 @@ registry:
     REGISTRY_HTTP_TLS_CERTIFICATE: /certs/registry/fullchain.pem
     REGISTRY_HTTP_TLS_KEY: /certs/registry/privkey.pem
 
-
-filebeat:
-  container_name: filebeat
+filebeat-nginx:
+  container_name: filebeat-nginx
   restart: always
   image: robedevops/adop-filebeat:6.4.3
   net: ${CUSTOM_NETWORK_NAME}
   volumes_from:
     - proxy:ro
+
+filebeat-docker:
+  container_name: filebeat-docker
+  restart: always
+  image: robedevops/adop-filebeat-docker:1.0
+  net: ${CUSTOM_NETWORK_NAME}
+  environment:
+    LOGS_PATH: /tmp/containers/
+    LOGSTASH_HOST: logstash:5055
