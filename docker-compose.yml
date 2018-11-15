@@ -366,7 +366,7 @@ registry:
 filebeat:
   container_name: filebeat
   restart: always
-  image: robe/adop-filebeat:6.4.3
+  image: robedevops/adop-filebeat:6.4.3
   net: ${CUSTOM_NETWORK_NAME}
   volumes_from:
     - proxy:ro

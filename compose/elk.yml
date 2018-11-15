@@ -16,7 +16,7 @@ elasticsearch:
 logstash:
   container_name: logstash
   restart: always
-  image: robe/adop-logstash:6.4.3
+  image: robedevops/adop-logstash:6.4.3
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     - "constraint:tier==public"
