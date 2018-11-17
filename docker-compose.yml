@@ -372,3 +372,4 @@ metricbeat-docker:
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     LOGSTASH_HOST: logstash:5055
+    PERIOD: 10s
