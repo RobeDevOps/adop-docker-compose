@@ -16,11 +16,12 @@ elasticsearch:
 logstash:
   container_name: logstash
   restart: always
-  image: robedevops/adop-logstash:6.4.3
+  image: robedevops/adop-logstash:1.0
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     - "constraint:tier==public"
     - LS_HEAP_SIZE=1024m
+    - ELASTICSEARCH_URL=http://elasticsearch:9200
   ports:
     - "12201:12201/udp"
     - "25826:25826/udp"
