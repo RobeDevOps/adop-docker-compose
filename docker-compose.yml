@@ -384,6 +384,6 @@ sonar-metrics:
   environment:
     LOGSTASH_HOST: logstash:5065
     PERIOD: 30s
-    SONAR_LOGS_PATH: /var/log/sonar
+    SONAR_LOGS_PATH: /var/log/sonar/
     SONAR_HOST: http://sonar
     SONAR_TOKEN: f750255bbc86d8c21779ecd4ba688891eb7e4dd4
