@@ -28,6 +28,7 @@ logstash:
     - "5000:5000/tcp"
     - "5044:5044/tcp"
     - "5055:5055/tcp"
+    - "5065:5065/tcp"
 
 kibana:
   container_name: kibana

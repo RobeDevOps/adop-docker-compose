@@ -181,6 +181,8 @@ sonar:
   net: ${CUSTOM_NETWORK_NAME}
   expose:
     - "9000"
+  ports:
+    - "9000:9000/tcp"
   environment:
     - "dependency:container==sonar-mysql"
     - "SONARQUBE_JDBC_USERNAME=${SONAR_MYSQL_USER}"
@@ -373,3 +375,15 @@ metricbeat-docker:
   environment:
     LOGSTASH_HOST: logstash:5055
     PERIOD: 10s
+
+sonar-metrics:
+  container_name: sonar-metrics
+  restart: always
+  image: robedevops/adop-sonar-metrics:1.0
+  net: ${CUSTOM_NETWORK_NAME}
+  environment:
+    LOGSTASH_HOST: logstash:5065
+    PERIOD: 30s
+    SONAR_LOGS_PATH: /var/log/sonar
+    SONAR_HOST: http://sonar
+    SONAR_TOKEN: f750255bbc86d8c21779ecd4ba688891eb7e4dd4
