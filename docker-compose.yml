@@ -303,7 +303,7 @@ selenium-node-firefox:
 nexus:
   container_name: nexus
   restart: always
-  image:  accenture/adop-nexus:0.2.2
+  image: accenture/adop-nexus:0.2.2
   net: ${CUSTOM_NETWORK_NAME}
   expose:
     - "8081"
@@ -379,11 +379,12 @@ metricbeat-docker:
 sonar-metrics:
   container_name: sonar-metrics
   restart: always
-  image: robedevops/adop-sonar-metrics:1.0
+  image: robedevops/adop-sonar-metrics:1.0.1
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     LOGSTASH_HOST: logstash:5065
     PERIOD: 30s
     SONAR_LOGS_PATH: /var/log/sonar/
     SONAR_HOST: http://sonar
-    SONAR_TOKEN: f750255bbc86d8c21779ecd4ba688891eb7e4dd4
+    SONAR_USERNAME: ${INITIAL_ADMIN_USER}
+    SONAR_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
