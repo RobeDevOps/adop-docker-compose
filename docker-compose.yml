@@ -385,7 +385,7 @@ sonar-metrics:
     LOGSTASH_HOST: logstash:5065
     PERIOD: 30s
     SONAR_LOGS_PATH: /var/log/sonar
-    SONAR_DATA_LOGS: /opt/var/sonar
+    SONAR_DATA_LOGS: /opt/sonar/data
     SONAR_HOST: http://sonar:9000
     SONAR_USERNAME: ${INITIAL_ADMIN_USER}
     SONAR_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
