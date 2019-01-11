@@ -386,6 +386,6 @@ sonar-metrics:
     PERIOD: 30s
     SONAR_LOGS_PATH: /var/log/sonar
     SONAR_DATA_LOGS: /opt/var/sonar
-    SONAR_HOST: http://sonar
+    SONAR_HOST: http://sonar:9000
     SONAR_USERNAME: ${INITIAL_ADMIN_USER}
     SONAR_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
