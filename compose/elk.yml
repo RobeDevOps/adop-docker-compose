@@ -16,7 +16,7 @@ elasticsearch:
 logstash:
   container_name: logstash
   restart: always
-  image: robedevops/adop-logstash:1.0.1
+  image: robedevops/adop-logstash:1.0.2
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     - "constraint:tier==public"
@@ -27,6 +27,7 @@ logstash:
     - "25826:25826/udp"
     - "5000:5000/tcp"
     - "5044:5044/tcp"
+    - "5045:5045/tcp"
     - "5055:5055/tcp"
     - "5065:5065/tcp"
 
