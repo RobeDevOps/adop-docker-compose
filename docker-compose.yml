@@ -389,3 +389,14 @@ sonar-metrics:
     SONAR_HOST: http://sonar:9000
     SONAR_USERNAME: ${INITIAL_ADMIN_USER}
     SONAR_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
+
+jira-metrics:
+  container_name: jira-metrics
+  restart: always
+  image: robedevops/adop-jira-metrics:1.0
+  net: ${CUSTOM_NETWORK_NAME}
+  environment:
+    LOGSTASH_HOST: logstash:5045
+    JIRA_HOST: http://54.209.251.201:8080
+    JIRA_USERNAME: admin
+    JIRA_PASSWORD: admin
