@@ -58,3 +58,9 @@ export DOCKER_CLIENT_CERT_PATH="//root/.docker/"
 
 # SSL Settings
 export PROTO="http"
+
+# Jira SERVER endpoint variables
+# These variables can be change to custom values.
+export JIRA_SERVER="http://$(curl http://instance-data/latest/meta-data/public-ipv4):9090"
+export JIRA_USERNAME="admin"
+export JIRA_PASSWORD="admin"

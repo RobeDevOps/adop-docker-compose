@@ -390,6 +390,15 @@ sonar-metrics:
     SONAR_USERNAME: ${INITIAL_ADMIN_USER}
     SONAR_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
 
+jira:
+  container_name: jira
+  restart: always
+  image: blacklabelops/jira
+  net: ${CUSTOM_NETWORK_NAME}
+  ports:
+    - "9090:8080/tcp"
+
+
 jira-metrics:
   container_name: jira-metrics
   restart: always
@@ -398,5 +407,5 @@ jira-metrics:
   environment:
     LOGSTASH_HOST: logstash:5045
     JIRA_HOST: ${JIRA_SERVER}
-    JIRA_USERNAME: admin
-    JIRA_PASSWORD: admin
+    JIRA_USERNAME: ${JIRA_USERNAME}
+    JIRA_PASSWORD: ${JIRA_PASSWORD}
