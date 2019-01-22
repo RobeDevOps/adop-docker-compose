@@ -72,3 +72,7 @@ registry:
 metricbeat-docker:
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock
+
+jira:
+  volumes:
+    - jira_data:/var/atlassian/jira
