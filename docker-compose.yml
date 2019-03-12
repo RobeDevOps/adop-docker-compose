@@ -276,10 +276,10 @@ jenkins-metrics:
   image: robedevops/adop-jenkins-metrics:1.0
   net: ${CUSTOM_NETWORK_NAME}
   environment:
-    LOGSTASH_HOST: logstash:5045
-    JIRA_HOST: ${JENKINS_URL}
-    JIRA_USERNAME: ${JENKINS_USR}
-    JIRA_PASSWORD: ${JENKINS_PSW}
+    LOGSTASH_HOST: logstash:5046
+    JENKINS_HOST: ${JENKINS_URL}
+    JENKJINS_USERNAME: ${JENKINS_USR}
+    JENKINS_PASSWORD: ${JENKINS_PSW}
 
 selenium-hub:
   container_name: selenium-hub
