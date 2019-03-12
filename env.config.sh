@@ -61,6 +61,10 @@ export PROTO="http"
 
 # Jira SERVER endpoint variables
 # These variables can be change to custom values.
-export JIRA_SERVER="http://$(curl http://instance-data/latest/meta-data/public-ipv4):9090"
+export JIRA_SERVER="http://$(curl http://instance-data/latest/meta-data/public-ipv4):8000"
 export JIRA_USERNAME="admin"
 export JIRA_PASSWORD="admin"
+
+export JENKIS_URL="http://jenkins:8080/jenkins"
+export JENKINS_USR='devops'
+export JENKISN_PSW='12345qwert'

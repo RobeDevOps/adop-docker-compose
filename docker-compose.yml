@@ -270,6 +270,17 @@ jenkins-slave:
     INITIAL_ADMIN_USER: ${INITIAL_ADMIN_USER}
     INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD_PLAIN}
 
+jenkins-metrics:
+  container_name: jenkins-metrics
+  restart: always
+  image: robedevops/adop-jenkins-metrics:1.0
+  net: ${CUSTOM_NETWORK_NAME}
+  environment:
+    LOGSTASH_HOST: logstash:5045
+    JIRA_HOST: ${JENKINS_URL}
+    JIRA_USERNAME: ${JENKINS_USR}
+    JIRA_PASSWORD: ${JENKINS_PSW}
+
 selenium-hub:
   container_name: selenium-hub
   restart: always
@@ -396,7 +407,7 @@ jira:
   image: blacklabelops/jira
   net: ${CUSTOM_NETWORK_NAME}
   ports:
-    - "9090:8080/tcp"
+    - "8000:8080/tcp"
 
 jira-metrics:
   container_name: jira-metrics
