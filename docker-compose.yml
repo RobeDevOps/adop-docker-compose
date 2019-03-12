@@ -278,8 +278,8 @@ jenkins-metrics:
   environment:
     LOGSTASH_HOST: logstash:5046
     JENKINS_HOST: ${JENKINS_URL}
-    JENKJINS_USERNAME: ${JENKINS_USR}
-    JENKINS_PASSWORD: ${JENKINS_PSW}
+    JENKINS_USR: ${JENKINS_USR}
+    JENKINS_PSW: ${JENKINS_PSW}
 
 selenium-hub:
   container_name: selenium-hub

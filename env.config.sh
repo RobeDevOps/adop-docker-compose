@@ -65,6 +65,6 @@ export JIRA_SERVER="http://$(curl http://instance-data/latest/meta-data/public-i
 export JIRA_USERNAME="admin"
 export JIRA_PASSWORD="admin"
 
-export JENKINS_URL="http://jenkins:8080/jenkins"
+export JENKINS_URL="http://$(curl http://instance-data/latest/meta-data/public-ipv4)/jenkins"
 export JENKINS_USR='devops'
 export JENKINS_PSW='12345qwert'
