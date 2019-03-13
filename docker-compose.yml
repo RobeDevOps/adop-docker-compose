@@ -277,7 +277,7 @@ jenkins-metrics:
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     LOGSTASH_HOST: logstash:5046
-    JENKINS_HOST: ${JENKINS_URL}
+    JENKINS_URL: ${JENKINS_URL}
     JENKINS_USR: ${JENKINS_USR}
     JENKINS_PSW: ${JENKINS_PSW}
 
